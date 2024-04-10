@@ -22,31 +22,27 @@ public class Main {
         cpfs.add(new Cpf("12345678912312"));
         cpfs.add(new Cpf("12312312"));
         cpfs.add(new Cpf("12"));
-        cpfs.add(new Cpf("12345678944"));
+        cpfs.add(new Cpf("12345678944BVC"));
         cpfs.add(new Cpf("A12547"));
-        cpfs.add(new Cpf("A1231231232"));
         Validacao validacao = new Validacao();
 
         for (Cpf cpf : cpfs) {
             if (validacao.verificarQuantidade(cpf) == true){
-                cpfValidos.add(cpf);
-
+                if (validacao.verificarNumeros(cpf) == true){
+                    cpfValidos.add(cpf);
+                }
             }
-            else{
-                cpfInvalidos.add(cpf);
+            else{ cpfInvalidos.add(cpf);
             }
-
         }
 
-        System.out.println("CPF válidos: ");
+        System.out.println("CPF válidos numericamente e pela quantidade de caracter : ");
         for (Cpf cpf : cpfValidos){
             System.out.println(cpf.toString());
         }
-        System.out.println("CPF inválidos: ");
+        System.out.println("CPF inválidos  numericamente pela quantidade de caracter: ");
         for (Cpf cpf : cpfInvalidos){
             System.out.println(cpf.toString());
         }
-
-
     }
 }
