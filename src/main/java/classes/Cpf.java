@@ -20,6 +20,6 @@ public class Cpf {
 
     @Override
     public String toString() {
-        return  cpf + '\'';
+        return  cpf;
     }
 }
